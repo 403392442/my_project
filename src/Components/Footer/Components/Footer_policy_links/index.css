@@ -1,0 +1,17 @@
+.policy-links-container__div {
+    display: flex;
+    justify-content: center;
+}
+
+.policy-links-container__div p {
+    margin: 0 7px;
+}
+
+.policy-links-container__div a,
+.policy-links-container__div a:link,
+.policy-links-container__div a:visited,
+.policy-links-container__div a:hover,
+.policy-links-container__div a:active {
+    text-decoration: none;
+    color: gray;
+}

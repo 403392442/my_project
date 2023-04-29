@@ -1,0 +1,85 @@
+.navi-container__div {
+    margin: 2rem;
+}
+
+.navi-container__div,
+.navi-center-directions-container__div,
+.navi-directions-left-container__ul,
+.navi-directions-right-container__ul
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navi-search-container__div {
+    display: flex;
+    width: 100%;
+}
+
+.navi-search__input {
+    width: 100%;
+    margin: 0 2rem;
+    border: none;
+}
+
+.navi-search__input:focus {
+    outline: none;
+}
+
+.navi-search-cancel__button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.6rem;
+}
+
+.navi-directions-left-container__ul,
+.navi-directions-right-container__ul {
+    list-style: none;
+}
+
+.navi-directions-left-container__ul li,
+.navi-directions-right-container__ul li{
+    padding: 0.7rem 1.5rem;
+}
+
+.navi-directions-left-container__ul li a,
+.navi-directions-right-container__ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+}
+
+.navi-directions__a--addUnderline {
+    position: relative;
+    display: inline-block;
+}
+
+.navi-directions__a--addUnderline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in;
+}
+
+.navi-directions__a--addUnderline:hover::after {
+    transform: scaleX(1);
+}
+
+.navi-right-account-cart-container__div a {
+    text-decoration: none;
+    color: black;
+    margin-left: 2rem;
+}
+
+.navi-right-account-cart-container__div a:link,
+.navi-right-account-cart-container__div a:visited,
+.navi-right-account-cart-container__div a:hover,
+.navi-right-account-cart-container__div a:active {
+    color: black;
+}

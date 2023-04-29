@@ -1,0 +1,10 @@
+.banner-container {
+    width: 100%;
+    background-color: var(--googan-squad-color);
+    padding: 1rem;
+}
+
+.banner-container strong {
+    font-size: 1.4rem;
+    margin: 0;
+}

@@ -1,0 +1,37 @@
+.quick-links-container__div {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 15rem;
+    text-align: left;
+    margin-top: 3rem;
+}
+
+.quicker-links-gear__div,
+.quick-links-tackle__div,
+.quick-links-bundles__div,
+.quick-links-help__div,
+.quick-links-other__div {
+    list-style: none;
+}
+
+.quick-links-container__div a,
+.quick-links-container__div a:link,
+.quick-links-container__div a:visited,
+.quick-links-container__div a:hover,
+.quick-links-container__div a:active {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.quick-links-topic__li {
+    margin-bottom: 1rem;
+}
+
+.social-media-icon-container__div span {
+    font-size: 3rem;
+}
+
+.social-media-icon-container__div span:hover {
+    color: var(--googan-squad-color);
+}

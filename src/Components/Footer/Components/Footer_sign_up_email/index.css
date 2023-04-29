@@ -1,0 +1,27 @@
+.sign-up-container__div {
+    background-color: black;
+    color: white;
+    padding: 3rem;
+}
+
+.sign-up-container__div p {
+    font-size: 3rem;
+}
+
+.sign-up-container__div input{
+    background-color: black;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    font-size: 2.5rem;
+}
+
+.sign-up-container__div input:focus{
+    outline: none;
+}
+
+.sign-up-container__div span{
+    font-size: 3.5rem;
+    text-align: end;
+}
+

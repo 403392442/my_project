@@ -1,0 +1,27 @@
+.social-media-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.social-media-list {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.social-media-list li {
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+.social-media-list span {
+    font-size: 2rem;
+}
+
+.social-media-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.social-media-list a:hover {
+    color: var(--googan-squad-color);
+}
