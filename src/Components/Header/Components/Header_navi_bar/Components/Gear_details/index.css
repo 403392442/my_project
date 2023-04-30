@@ -1,0 +1,30 @@
+.gears-details-container__div {
+    text-align: start;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+}
+
+.gears-detail-item-topic__a,
+.gears-detail-item-category__a,
+.gears-detail-item-topic__a:link,
+.gears-detail-item-category__a:link,
+.gears-detail-item-topic__a:visited,
+.gears-detail-item-category__a:visited,
+.gears-detail-item-topic__a:hover,
+.gears-detail-item-category__a:hover,
+.gears-detail-item-topic__a:active,
+.gears-detail-item-category__a:active{
+    text-decoration: none;
+    color: black;
+}
+
+.gears-detail-item-topic__a {
+    font-size: 1.4rem;
+}
+
+.gears-detail-item-category__a {
+    font-size: 1.3rem;
+}

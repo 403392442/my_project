@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 
 import './index.css'
-import {APPAREL_URL, NEW_RELEASE_URL, TACKLE_URL, BUNDLES_URL, TERMINAL_URL, GEAR_URL,
-    RODS_REELS_URL, TEAM_URL, MAIN_PAGE_URL, ACCOUNT_URL, CART_URL} from "../../../../Utils/utils";
+import {
+    APPAREL_URL, NEW_RELEASE_URL, TACKLE_URL, BUNDLES_URL, TERMINAL_URL, GEAR_URL,
+    RODS_REELS_URL, TEAM_URL, MAIN_PAGE_URL, ACCOUNT_URL, CART_URL
+} from "../../../../Utils/utils";
+import ApparelDetails from './Components/Apparel_details';
 
 
 export default function Index() {
@@ -17,6 +20,7 @@ export default function Index() {
     const [hoverRodsReels, setHoverRodsReels] = useState(false);
     const [hoverTerminal, setHoverTerminal] = useState(false);
     const [hoverTeam, setHoverTeam] = useState(false);
+    const [hoverDropDown, setHoverDropDown] = useState(false);
 
     const handleSearchIcon = () => {
         if (!clickSearch) {
@@ -35,18 +39,23 @@ export default function Index() {
         setClickSearch(false);
     }
 
+    const handleLeave = (setFunction)=> {
+        return
+    }
+
   return (
-    <div className='navi-container__div'>
+      <div className='navi-container__div'>
 
-      <div onClick={() => handleSearchIcon()} className='navi-left-search-container__div'>
-        <span className='iconfont icon-search'></span>
-      </div>
+          <div onClick={() => handleSearchIcon()} className='navi-left-search-container__div'>
+              <span className='iconfont icon-search'></span>
+          </div>
 
-        {
-            clickSearch? (
-                <div className='navi-search-container__div'>
-                    <input placeholder='Search our store' value={searchItem} onChange={e => handleSearchInputChange(e)} className='navi-search__input' type="text"/>
-                    <button className='navi-search-cancel__button' onClick={() => handleCancelSearch()}>X</button>
+          {
+              clickSearch ? (
+                  <div className='navi-search-container__div'>
+                      <input placeholder='Search our store' value={searchItem}
+                             onChange={e => handleSearchInputChange(e)} className='navi-search__input' type="text"/>
+                      <button className='navi-search-cancel__button' onClick={() => handleCancelSearch()}>X</button>
                 </div>
             ) : (
                 <>
@@ -95,6 +104,10 @@ export default function Index() {
                 </>
             )
         }
+
+        <div className='navi-detail-container--scroll-down__div'>
+            {hoverApparel ? (<ApparelDetails />) : null}
+        </div>
 
 
     </div>

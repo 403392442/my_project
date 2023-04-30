@@ -1,7 +1,3 @@
-.navi-container__div {
-    margin: 2rem;
-}
-
 .navi-container__div,
 .navi-center-directions-container__div,
 .navi-directions-left-container__ul,
@@ -9,6 +5,10 @@
 {
     display: flex;
     justify-content: space-around;
+}
+
+.navi-container__div {
+    flex-wrap: wrap;
 }
 
 .navi-search-container__div {
@@ -82,4 +82,16 @@
 .navi-right-account-cart-container__div a:hover,
 .navi-right-account-cart-container__div a:active {
     color: black;
+}
+
+.navi-detail-container--scroll-down__div {
+    flex-basis: 100%;
+    /*transform: scaleY(1);*/
+    transition-duration: 0.3s;
+}
+
+.navi-detail-container--scroll-down__div:hover {
+    opacity: 1;
+    transform:scaleY(1);
+    height: auto;
 }

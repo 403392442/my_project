@@ -1,0 +1,30 @@
+.baits-details-container__div {
+    text-align: start;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+}
+
+.baits-detail-item-topic__a,
+.baits-detail-item-category__a,
+.baits-detail-item-topic__a:link,
+.baits-detail-item-category__a:link,
+.baits-detail-item-topic__a:visited,
+.baits-detail-item-category__a:visited,
+.baits-detail-item-topic__a:hover,
+.baits-detail-item-category__a:hover,
+.baits-detail-item-topic__a:active,
+.baits-detail-item-category__a:active{
+    text-decoration: none;
+    color: black;
+}
+
+.baits-detail-item-topic__a {
+    font-size: 1.4rem;
+}
+
+.baits-detail-item-category__a {
+    font-size: 1.3rem;
+}

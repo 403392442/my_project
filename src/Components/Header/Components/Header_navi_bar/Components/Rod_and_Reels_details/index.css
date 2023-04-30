@@ -1,0 +1,30 @@
+.rods-and-reels-details-container__div {
+    text-align: start;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+}
+
+.rods-and-reels-detail-item-topic__a,
+.rods-and-reels-detail-item-category__a,
+.rods-and-reels-detail-item-topic__a:link,
+.rods-and-reels-detail-item-category__a:link,
+.rods-and-reels-detail-item-topic__a:visited,
+.rods-and-reels-detail-item-category__a:visited,
+.rods-and-reels-detail-item-topic__a:hover,
+.rods-and-reels-detail-item-category__a:hover,
+.rods-and-reels-detail-item-topic__a:active,
+.rods-and-reels-detail-item-category__a:active{
+    text-decoration: none;
+    color: black;
+}
+
+.rods-and-reels-detail-item-topic__a {
+    font-size: 1.4rem;
+}
+
+.rods-and-reels-detail-item-category__a {
+    font-size: 1.3rem;
+}
