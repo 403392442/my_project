@@ -19,6 +19,8 @@ export default function Index() {
     const [searchItem, setSearchItem] = useState('');
 
     const [hoverDropDown, setHoverDropDown] = useState(null);
+    const [hovering, setHovering] = useState(null);
+
 
     const handleSearchIcon = () => {
         if (!clickSearch) {
@@ -65,16 +67,16 @@ export default function Index() {
                         <div>
                             <ul className='navi-directions-left-container__ul'>
                                 <li onMouseEnter={handleMouseLeaveDropDown}>
-                                    <a href={NEW_RELEASE_URL}>NEW</a>
+                                    <a className='new-option__a' href={NEW_RELEASE_URL}>NEW</a>
                                 </li>
-                                <li onMouseEnter={()=>handleItemMouseEnter(<ApparelDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown}/>)}>
-                                    <a href={APPAREL_URL}>APPAREL</a>
+                                <li onMouseEnter={()=>handleItemMouseEnter(<ApparelDetails setHovering={setHovering} handleMouseLeaveDropDown={handleMouseLeaveDropDown}/>)}>
+                                    {hovering === 'apparel' ? <a className='add-underline' href={APPAREL_URL}>APPAREL</a> : <a href={APPAREL_URL}>APPAREL</a>}
                                 </li>
-                                <li onMouseEnter={()=>handleItemMouseEnter(<BaitsDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} /> )}>
-                                    <a href={BAITS_URL}>BAITS</a>
+                                <li onMouseEnter={()=>handleItemMouseEnter(<BaitsDetails setHovering={setHovering} handleMouseLeaveDropDown={handleMouseLeaveDropDown} /> )}>
+                                    {hovering === 'baits' ? <a className='add-underline' href={BAITS_URL}>BAITS</a> : <a href={BAITS_URL}>BAITS</a>}
                                 </li>
-                                <li onMouseEnter={()=>handleItemMouseEnter(<BundlesDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} /> )}>
-                                    <a href={BUNDLES_URL}>BUNDLES</a>
+                                <li onMouseEnter={()=>handleItemMouseEnter(<BundlesDetails setHovering={setHovering} handleMouseLeaveDropDown={handleMouseLeaveDropDown} /> )}>
+                                    {hovering === 'bundles' ? <a className='add-underline' href={BUNDLES_URL}>BUNDLES</a> : <a href={BUNDLES_URL}>BUNDLES</a>}
                                 </li>
                             </ul>
                         </div>
@@ -83,17 +85,17 @@ export default function Index() {
                         </div>
                         <div>
                             <ul className='navi-directions-right-container__ul'>
-                                <li onMouseEnter={()=>handleItemMouseEnter(<GearDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
-                                    <a href={GEAR_URL}>GEAR</a>
+                                <li onMouseEnter={()=>handleItemMouseEnter(<GearDetails setHovering={setHovering} handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
+                                    {hovering === 'gear' ? <a className='add-underline' href={GEAR_URL}>GEAR</a> : <a href={GEAR_URL}>GEAR</a>}
                                 </li>
-                                <li onMouseEnter={()=>handleItemMouseEnter(<RodsAndReelsDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
-                                    <a href={RODS_REELS_URL}>RODS & REELS</a>
+                                <li onMouseEnter={()=>handleItemMouseEnter(<RodsAndReelsDetails setHovering={setHovering} handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
+                                    {hovering === 'rods&reels' ? <a className='add-underline' href={RODS_REELS_URL}>RODS & REELS</a> : <a href={RODS_REELS_URL}>RODS & REELS</a>}
                                 </li>
-                                <li onMouseEnter={()=>handleItemMouseEnter(<TerminalDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
-                                    <a href={TERMINAL_URL}>TERMINAL</a>
+                                <li onMouseEnter={()=>handleItemMouseEnter(<TerminalDetails setHovering={setHovering} handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
+                                    {hovering === 'terminal' ? <a className='add-underline' href={TERMINAL_URL}>TERMINAL</a> : <a href={TERMINAL_URL}>TERMINAL</a>}
                                 </li>
-                                <li onMouseEnter={()=>handleItemMouseEnter(<TeamDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
-                                    <a href={TEAM_URL}>TEAM</a>
+                                <li onMouseEnter={()=>handleItemMouseEnter(<TeamDetails setHovering={setHovering} handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
+                                    {hovering === 'team' ? <a className='add-underline' href={TEAM_URL}>TEAM</a> : <a href={TEAM_URL}>TEAM</a>}
                                 </li>
                             </ul>
                         </div>

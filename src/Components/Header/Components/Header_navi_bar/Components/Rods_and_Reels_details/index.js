@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import './index.css';
 import {
@@ -9,7 +9,14 @@ import {
 
 function Index(props) {
 
-    const handleMouseLeaveDropDown = props.handleMouseLeaveDropDown;
+    useEffect(() => {
+        setHovering('rods&reels')
+        return () => {
+            setHovering(null)
+        }
+    })
+
+    const {handleMouseLeaveDropDown, setHovering} = props;
 
     return (
         <div className='rods-and-reels-details-container__div' onMouseLeave={handleMouseLeaveDropDown}>
