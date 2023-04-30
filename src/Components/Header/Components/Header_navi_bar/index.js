@@ -2,25 +2,23 @@ import React, {useState} from 'react'
 
 import './index.css'
 import {
-    APPAREL_URL, NEW_RELEASE_URL, TACKLE_URL, BUNDLES_URL, TERMINAL_URL, GEAR_URL,
+    APPAREL_URL, NEW_RELEASE_URL, BAITS_URL, BUNDLES_URL, TERMINAL_URL, GEAR_URL,
     RODS_REELS_URL, TEAM_URL, MAIN_PAGE_URL, ACCOUNT_URL, CART_URL
 } from "../../../../Utils/utils";
 import ApparelDetails from './Components/Apparel_details';
-
+import BaitsDetails from "./Components/Baits_details";
+import GearDetails from "./Components/Gear_details";
+import RodsAndReelsDetails from "./Components/Rods_and_Reels_details";
+import TerminalDetails from "./Components/Terminal_details";
+import BundlesDetails from "./Components/Bundles_details";
+import TeamDetails from "./Components/Team_details";
 
 export default function Index() {
 
     const [clickSearch, setClickSearch] = useState(false);
     const [searchItem, setSearchItem] = useState('');
-    const [hoverNew, setHoverNew] = useState(false);
-    const [hoverApparel, setHoverApparel] = useState(false);
-    const [hoverTackle, setHoverTackle] = useState(false);
-    const [hoverBundle, setHoverBundle] = useState(false);
-    const [hoverGear, setHoverGear] = useState(false);
-    const [hoverRodsReels, setHoverRodsReels] = useState(false);
-    const [hoverTerminal, setHoverTerminal] = useState(false);
-    const [hoverTeam, setHoverTeam] = useState(false);
-    const [hoverDropDown, setHoverDropDown] = useState(false);
+
+    const [hoverDropDown, setHoverDropDown] = useState(null);
 
     const handleSearchIcon = () => {
         if (!clickSearch) {
@@ -39,40 +37,44 @@ export default function Index() {
         setClickSearch(false);
     }
 
-    const handleLeave = (setFunction)=> {
-        return
+    const handleItemMouseEnter = (component) => {
+        setHoverDropDown(component)
+    }
+
+    const handleMouseLeaveDropDown = () => {
+        setHoverDropDown(null)
     }
 
   return (
-      <div className='navi-container__div'>
-
-          <div onClick={() => handleSearchIcon()} className='navi-left-search-container__div'>
-              <span className='iconfont icon-search'></span>
-          </div>
+      <div className='navi-container__div' onMouseLeave={handleMouseLeaveDropDown}>
 
           {
               clickSearch ? (
                   <div className='navi-search-container__div'>
+                      <span className='iconfont icon-search'></span>
                       <input placeholder='Search our store' value={searchItem}
                              onChange={e => handleSearchInputChange(e)} className='navi-search__input' type="text"/>
                       <button className='navi-search-cancel__button' onClick={() => handleCancelSearch()}>X</button>
                 </div>
             ) : (
                 <>
+                    <div onClick={() => handleSearchIcon()} className='navi-left-search-container__div'>
+                        <span className='iconfont icon-search'></span>
+                    </div>
                     <div className='navi-center-directions-container__div'>
                         <div>
                             <ul className='navi-directions-left-container__ul'>
-                                <li onMouseEnter={()=>setHoverNew(!hoverNew)} onMouseLeave={()=>setHoverNew(!hoverNew)}>
-                                    {hoverNew ? (<a className='navi-directions__a--addUnderline' href={NEW_RELEASE_URL}>NEW</a>) : (<a href={NEW_RELEASE_URL}>NEW</a>)}
+                                <li onMouseEnter={handleMouseLeaveDropDown}>
+                                    <a href={NEW_RELEASE_URL}>NEW</a>
                                 </li>
-                                <li onMouseEnter={()=>setHoverApparel(!hoverApparel)} onMouseLeave={()=>setHoverApparel(!hoverApparel)}>
-                                    {hoverApparel ? (<a className='navi-directions__a--addUnderline' href={APPAREL_URL}>APPAREL</a>) : (<a href={APPAREL_URL}>APPAREL</a>)}
+                                <li onMouseEnter={()=>handleItemMouseEnter(<ApparelDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown}/>)}>
+                                    <a href={APPAREL_URL}>APPAREL</a>
                                 </li>
-                                <li onMouseEnter={()=>setHoverTackle(!hoverTackle)} onMouseLeave={()=>setHoverTackle(!hoverTackle)}>
-                                    {hoverTackle ? (<a className='navi-directions__a--addUnderline' href={TACKLE_URL}>BAITS</a>) : (<a href={TACKLE_URL}>BAITS</a>)}
+                                <li onMouseEnter={()=>handleItemMouseEnter(<BaitsDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} /> )}>
+                                    <a href={BAITS_URL}>BAITS</a>
                                 </li>
-                                <li onMouseEnter={()=>setHoverBundle(!hoverBundle)} onMouseLeave={()=>setHoverBundle(!hoverBundle)}>
-                                    {hoverBundle ? (<a className='navi-directions__a--addUnderline' href={BUNDLES_URL}>BUNDLES</a>) : (<a href={BUNDLES_URL}>BUNDLES</a>)}
+                                <li onMouseEnter={()=>handleItemMouseEnter(<BundlesDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} /> )}>
+                                    <a href={BUNDLES_URL}>BUNDLES</a>
                                 </li>
                             </ul>
                         </div>
@@ -81,23 +83,23 @@ export default function Index() {
                         </div>
                         <div>
                             <ul className='navi-directions-right-container__ul'>
-                                <li onMouseEnter={()=>setHoverGear(!hoverGear)} onMouseLeave={()=>setHoverGear(!hoverGear)}>
-                                    {hoverGear ? (<a className='navi-directions__a--addUnderline' href={GEAR_URL}>GEAR</a>) : (<a href={GEAR_URL}>GEAR</a>)}
+                                <li onMouseEnter={()=>handleItemMouseEnter(<GearDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
+                                    <a href={GEAR_URL}>GEAR</a>
                                 </li>
-                                <li onMouseEnter={()=>setHoverRodsReels(!hoverRodsReels)} onMouseLeave={()=>setHoverRodsReels(!hoverRodsReels)}>
-                                    {hoverRodsReels ? (<a className='navi-directions__a--addUnderline' href={RODS_REELS_URL}>RODS & REELS</a>) : (<a href={RODS_REELS_URL}>RODS & REELS</a>)}
+                                <li onMouseEnter={()=>handleItemMouseEnter(<RodsAndReelsDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
+                                    <a href={RODS_REELS_URL}>RODS & REELS</a>
                                 </li>
-                                <li onMouseEnter={()=>setHoverTerminal(!hoverTerminal)} onMouseLeave={()=>setHoverTerminal(!hoverTerminal)}>
-                                    {hoverTerminal ? (<a className='navi-directions__a--addUnderline' href={TERMINAL_URL}>TERMINAL</a>) : (<a href={TERMINAL_URL}>TERMINAL</a>)}
+                                <li onMouseEnter={()=>handleItemMouseEnter(<TerminalDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
+                                    <a href={TERMINAL_URL}>TERMINAL</a>
                                 </li>
-                                <li onMouseEnter={()=>setHoverTeam(!hoverTeam)} onMouseLeave={()=>setHoverTeam(!hoverTeam)}>
-                                    {hoverTeam ? (<a className='navi-directions__a--addUnderline' href={TEAM_URL}>TEAM</a>) : (<a href={TEAM_URL}>TEAM</a>)}
+                                <li onMouseEnter={()=>handleItemMouseEnter(<TeamDetails handleMouseLeaveDropDown={handleMouseLeaveDropDown} />)}>
+                                    <a href={TEAM_URL}>TEAM</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div className='navi-right-account-cart-container__div'>
+                    <div className='navi-right-account-cart-container__div'  onMouseEnter={handleMouseLeaveDropDown}>
                         <a href={ACCOUNT_URL}><span className='iconfont icon-account'></span></a>
                         <a href={CART_URL}><span className='iconfont icon-cart'></span></a>
                     </div>
@@ -106,7 +108,7 @@ export default function Index() {
         }
 
         <div className='navi-detail-container--scroll-down__div'>
-            {hoverApparel ? (<ApparelDetails />) : null}
+            {hoverDropDown !== null ? hoverDropDown : null}
         </div>
 
 

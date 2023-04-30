@@ -9,8 +9,10 @@ import {
 
 function Index(props) {
 
+    const handleMouseLeaveDropDown = props.handleMouseLeaveDropDown;
+
     return (
-        <div className='rods-and-reels-details-container__div'>
+        <div className='rods-and-reels-details-container__div' onMouseLeave={handleMouseLeaveDropDown}>
             <div className='rods-and-reels-detail-item-reels'>
                 <a className='rods-and-reels-detail-item-topic__a' href={RODS_AND_REELS_SPINNING_REELS_URL}><p>SPINNING REELS</p></a>
             </div>

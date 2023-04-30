@@ -1,4 +1,4 @@
-.apparel-details-container__div {
+.terminal-details-container__div {
     text-align: start;
     display: flex;
     justify-content: space-around;
@@ -7,24 +7,24 @@
     position: absolute;
 }
 
-.apparel-detail-item-topic__a,
-.apparel-detail-item-category__a,
-.apparel-detail-item-topic__a:link,
-.apparel-detail-item-category__a:link,
-.apparel-detail-item-topic__a:visited,
-.apparel-detail-item-category__a:visited,
-.apparel-detail-item-topic__a:hover,
-.apparel-detail-item-category__a:hover,
-.apparel-detail-item-topic__a:active,
-.apparel-detail-item-category__a:active{
+.terminal-detail-item-topic__a,
+.terminal-detail-item-category__a,
+.terminal-detail-item-topic__a:link,
+.terminal-detail-item-category__a:link,
+.terminal-detail-item-topic__a:visited,
+.terminal-detail-item-category__a:visited,
+.terminal-detail-item-topic__a:hover,
+.terminal-detail-item-category__a:hover,
+.terminal-detail-item-topic__a:active,
+.terminal-detail-item-category__a:active{
     text-decoration: none;
     color: black;
 }
 
-.apparel-detail-item-topic__a {
+.terminal-detail-item-topic__a {
     font-size: 1.4rem;
 }
 
-.apparel-detail-item-category__a {
+.terminal-detail-item-category__a {
     font-size: 1.3rem;
 }

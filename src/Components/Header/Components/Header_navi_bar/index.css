@@ -39,7 +39,7 @@
 
 .navi-directions-left-container__ul li,
 .navi-directions-right-container__ul li{
-    padding: 0.7rem 1.5rem;
+    margin: 0.7rem 1.5rem;
 }
 
 .navi-directions-left-container__ul li a,
@@ -47,28 +47,6 @@
     text-decoration: none;
     color: black;
     font-size: 1.4rem;
-}
-
-.navi-directions__a--addUnderline {
-    position: relative;
-    display: inline-block;
-}
-
-.navi-directions__a--addUnderline::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: black;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-in;
-}
-
-.navi-directions__a--addUnderline:hover::after {
-    transform: scaleX(1);
 }
 
 .navi-right-account-cart-container__div a {
@@ -90,7 +68,7 @@
     transition-duration: 0.3s;
 }
 
-.navi-detail-container--scroll-down__div:hover {
+.navi-directions__a--addUnderline:hover .navi-detail-container--scroll-down__div {
     opacity: 1;
     transform:scaleY(1);
     height: auto;

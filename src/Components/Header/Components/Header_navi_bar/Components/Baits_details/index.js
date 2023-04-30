@@ -24,8 +24,10 @@ import {
 
 function Index(props) {
 
+    const handleMouseLeaveDropDown = props.handleMouseLeaveDropDown;
+
     return (
-        <div className='baits-details-container__div'>
+        <div className='baits-details-container__div' onMouseLeave={handleMouseLeaveDropDown}>
             <div className='baits-detail-item-new-release'>
                 <a className='baits-detail-item-topic__a' href={NEW_RELEASE_URL}><p>2023 NEW RELEASE</p></a>
             </div>

@@ -16,8 +16,10 @@ import {
 
 function Index(props) {
 
+    const handleMouseLeaveDropDown = props.handleMouseLeaveDropDown;
+
     return (
-        <div className='gears-details-container__div'>
+        <div className='gears-details-container__div' onMouseLeave={handleMouseLeaveDropDown}>
             <div className='gears-detail-item-storage'>
                 <a className='gears-detail-item-topic__a' href={GEAR_STORAGE_URL}><p>STORAGE</p></a>
                 <a className='gears-detail-item-category__a' href={GEAR_TACKLE_BAGS_URL}><p>TACKLE BAGS</p></a>
